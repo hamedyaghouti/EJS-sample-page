@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/font/stylesheet.css" />
+    <link rel="stylesheet" href="./src/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <script src="./src/js/fontawesome.min.js"></script>
+    <script src="./src/js/jQuery.js"></script>
+    <script src="./src/js/ejs/ejs.min.js"></script>
+    <title>EJS-sample-page</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script id="template" type="text/x-ejs-template">
+      <header class="position-absolute w-100 bg-transparent">
+        <div class="wrapper d-flex justify-content-between align-items-center">
+          <div class="hamburger-menu d-md-none"><i class="<%= data.header.hamburgerMenu.icon%>"></i></div>
+          <div class="left d-none d-md-block">
+            <% data.header.left.forEach(item => { %>
+              <a class="text-light" href="<%=item.url%>"><%=item.value%></a>
+            <% }) %>
+          </div>
+          <a class="text-light" href="<%=data.header.center.url%>"><h1><%=data.header.center.value%></h1></a>
+          <div class="right d-flex text-light">
+            <div class="social d-none d-md-block">
+              <% data.header.right.social.forEach(item => { %>
+                <a class="text-light ml-2" href="<%=item.url%>" target="_blank"><i class="<%=item.icon%>"></i></a>
+              <% }) %>
+            </div>
+            <div class="basket ml-2">
+              <a class="text-light" href="<%=data.header.right.basket.url%>"><i class="<%=data.header.right.basket.icon%>"></i></a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="hero position-relative">
+        <div class="background position-absolute w-100 h-100 opacity-2"></div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="d-flex justify-content-center">
+            <h3 class="text-center w-75">
+              <%-data.three%>
+            </h3>
+          </div>
+        </div>
+      </section>
+      <section class="reason text-light">
+        <div class="container">
+          <div class="wrapper">
+            <div class="w-75 mx-auto">
+              <div class="row">
+                <% data.reason.forEach(item => { %>
+                  <div class="col-12 col-md-4 text-center">
+                    <div class="content">
+                      <h3 class="mb-3 mb-md-5"><%-item.header%></h3>
+                      <% item.paragraph.forEach(value => { %>
+                        <p><%=value%></p>
+                      <% }) %>
+                    </div>
+                  </div>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="core">
+        <div class="container">
+          <h1 class="text-center pb-4"><%=data.core.header%></h1>
+          <div
+            class="content-wrapper d-flex flex-md-row flex-column justify-content-center align-items-stretch"
+          >
+            <% data.core.items.forEach(item => { %>
+              <div class="item">
+                <a href="<%=item.url%>"
+                  ><img class="w-100 h-100" src="<%=item.img%>"
+                /></a>
+                <div class="d-flex justify-content-center mt-2 mt-lg-4">
+                  <h3><a href="<%=item.url%>"><%=item.title%></a></h3>
+                </div>
+              </div>
+            <% }) %>
+          </div>
+        </div>
+      </section>
+      <section class="solution">
+        <div class="container">
+          <div class="d-flex flex-column flex-md-row justify-content-between">
+            <div class="left w-100">
+              <img class="w-100" src="<%=data.solution.img%>" />
+            </div>
+            <div class="right w-100">
+              <h2><%=data.solution.title%></h2>
+              <% data.solution.paragraph.forEach(value => { %>
+                <p><%=value%></p>
+              <% }) %>
+              <a class="text-light d-inline-block" href="<%=data.solution.link.url%>"><%=data.solution.link.value%></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="brand">
+        <div class="container">
+          <div class="wrapper">
+            <h3 class="text-center"><%=data.brand.title%></h3>
+            <div class="row">
+              <% data.brand.items.forEach(item => { %>
+                <div class="item col-12 col-md-3">
+                  <img src="<%=item.img%>" />
+                </div>
+              <% }) %>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="carousel text-light">
+        <div class="container">
+          <div class="wrapper">
+            <p><%=data.carousel.description%></p>
+            <p><em><%=data.carousel.writer%></em></p>
+            <div class="text-center">
+              <a href="<%=data.carousel.link.url%>" class="text-center d-inline-block bg-white"><%=data.carousel.link.value%></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div class="container">
+          <div class="text-center"><%-data.footer%></div>
+        </div>
+      </footer>
+      <section class="portfolio">
+        <div class="wrapper">
+          <% data.portfolio.forEach(item => { %>
+            <div class="text-center section-padding position-relative">
+              <div class="container">
+                <div class="section-background">
+                  <img src="<%=item.img%>" />
+                  <div class="section-background-overlay"></div>
+                </div>
+                <h1>
+                  <a href="<%=item.url%>"><%=item.value%></a>
+                </h1>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      </section>
+    </script>
+    <script>
+      $(document).ready(function () {
+        $.getJSON("./src/data/pageData.json", function (res) {
+          var template = $("#template").html();
+          var data = { data: res };
+          var html = ejs.render(template, data);
+          document.getElementById("root").innerHTML = html;
+        });
+      });
+    </script>
+  </body>
+</html>
