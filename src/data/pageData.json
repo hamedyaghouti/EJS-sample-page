@@ -1,25 +1,21 @@
 {
   "header": {
     "hamburgerMenu": { "icon": "fas fa-bars" },
-    "left": [
-      { "url": "#", "value": "Portfolio" },
-      { "url": "#", "value": "Contact" }
+    "portfolio": { "url": "#", "value": "Portfolio" },
+    "contact": { "url": "#", "value": "Contact" },
+    "title": { "url": "#", "value": "Hannah Silverton" },
+    "social": [
+      { "url": "#", "type": "fab fa-instagram" },
+      { "url": "#", "type": "fab fa-linkedin-in" },
+      { "url": "#", "type": "far fa-envelope" }
     ],
-    "center": { "url": "#", "value": "Hannah Silverton" },
-    "right": {
-      "social": [
-        { "url": "#", "icon": "fab fa-instagram" },
-        { "url": "#", "icon": "fab fa-linkedin-in" },
-        { "url": "#", "icon": "far fa-envelope" }
-      ],
-      "basket": { "url": "#", "icon": "fas fa-shopping-basket" }
-    }
+    "basket": { "url": "#", "type": "fas fa-shopping-basket" }
   },
-  "three": "I am a brand marketer, specialising in <strong>positioning</strong>,<strong>experience design</strong> and <strong>creative + commercial copy</strong>.",
-  "reason": [
+  "about": "I am a brand marketer, specialising in <strong>positioning</strong>,<strong>experience design</strong> and <strong>creative + commercial copy</strong>.",
+  "skills": [
     {
-      "header": "What I <i>do</i> do.",
-      "paragraph": [
+      "title": "What I <i>do</i> do.",
+      "contents": [
         "Brand Positioning",
         "Marketing Audits",
         "Copywriting + Proofing",
@@ -27,16 +23,16 @@
       ]
     },
     {
-      "header": "What I <i>don’t</i> do.",
-      "paragraph": [
+      "title": "What I <i>don’t</i> do.",
+      "contents": [
         "Social Media Management",
         "Custom Web Design",
         "SEM or PPC… Basically anything too concerned with acronyms + algorithms."
       ]
     },
     {
-      "header": "What I <i>love</i> to do.",
-      "paragraph": [
+      "title": "What I <i>love</i> to do.",
+      "contents": [
         "Connect people + ideas",
         "Tell compelling stories",
         "Design great experiences",
@@ -44,30 +40,30 @@
       ]
     }
   ],
-  "core": {
-    "header": "Core Services",
+  "services": {
+    "title": "Core Services",
     "items": [
       {
+        "title": "Brand Therapy",
         "url": "#",
-        "img": "./assets/img/core-1.jpg",
-        "title": "Brand Therapy"
+        "img": "./assets/img/core-1.jpg"
       },
       {
+        "title": "Writing + Editing",
         "url": "#",
-        "img": "./assets/img/core-2.jpg",
-        "title": "Writing + Editing"
+        "img": "./assets/img/core-2.jpg"
       },
       {
+        "title": "Creative Matchmaking",
         "url": "#",
-        "img": "./assets/img/core-3.jpg",
-        "title": "Creative Matchmaking"
+        "img": "./assets/img/core-3.jpg"
       }
     ]
   },
   "solution": {
     "img": "./assets/img/pick-brain.jpg",
     "title": "The ‘pick your brain’ solution",
-    "paragraph": [
+    "contents": [
       "Like a lot of creative professionals, I have found myself sharing a lot of thoughts, contacts and strategies over a lot of coffees.",
       "Talking, caffeinating and being useful are three of my favourite activities, so it’s easy to see how this became a big part of my working week.",
       "But for the benefit of your business (and mine too), these chats are now more defined, refined and retitled ‘consults’.",
@@ -76,44 +72,50 @@
     ],
     "link": { "url": "#", "value": "Purchase one hour PYB session" }
   },
-  "brand": {
+  "projects": {
     "title": "Brands I’ve worked with or for…",
-    "items": [
-      { "img": "./assets/img/brand-1.png" },
-      { "img": "./assets/img/brand-2.png" },
-      { "img": "./assets/img/brand-3.png" },
-      { "img": "./assets/img/brand-4.png" },
-      { "img": "./assets/img/brand-5.png" },
-      { "img": "./assets/img/brand-6.png" },
-      { "img": "./assets/img/brand-7.png" },
-      { "img": "./assets/img/brand-8.png" },
-      { "img": "./assets/img/brand-9.png" },
-      { "img": "./assets/img/brand-10.png" },
-      { "img": "./assets/img/brand-11.png" },
-      { "img": "./assets/img/brand-12.png" },
-      { "img": "./assets/img/brand-13.png" },
-      { "img": "./assets/img/brand-14.png" },
-      { "img": "./assets/img/brand-15.png" },
-      { "img": "./assets/img/brand-16.png" }
+    "brands": [
+      "./assets/img/brand-1.png",
+      "./assets/img/brand-2.png",
+      "./assets/img/brand-3.png",
+      "./assets/img/brand-4.png",
+      "./assets/img/brand-5.png",
+      "./assets/img/brand-6.png",
+      "./assets/img/brand-7.png",
+      "./assets/img/brand-8.png",
+      "./assets/img/brand-9.png",
+      "./assets/img/brand-10.png",
+      "./assets/img/brand-11.png",
+      "./assets/img/brand-12.png",
+      "./assets/img/brand-13.png",
+      "./assets/img/brand-14.png",
+      "./assets/img/brand-15.png",
+      "./assets/img/brand-16.png"
     ]
   },
-  "carousel": {
-    "description": "“Highly creative, conceptual and visionary, Hannah is a brilliant marketer with a natural flair for communication. One of the most delightful people on the planet, she possesses a rare ability to hold the room with people of all levels. Enthusiastic, adventurous, confident, intuitive, hard working, a team player and ambitious...the complete package.”",
-    "writer": "Rebecca Campbell, Creative Director + Best-selling Author",
-    "link": { "url": "#", "value": "PROJECTS" }
-  },
+  "comments": [
+    {
+      "description": "“Highly creative, conceptual and visionary, Hannah is a brilliant marketer with a natural flair for communication. One of the most delightful people on the planet, she possesses a rare ability to hold the room with people of all levels. Enthusiastic, adventurous, confident, intuitive, hard working, a team player and ambitious...the complete package.”",
+      "writer": "Rebecca Campbell, Creative Director + Best-selling Author",
+      "link": { "url": "#", "value": "PROJECTS" }
+    }
+  ],
   "footer": "© 2020 <strong>Hannah Silverton</strong> All Rights Reserved",
   "portfolio": [
     {
+      "title": "EDITORIALS",
       "img": "./assets/img/portfolio-1.jpg",
-      "url": "#",
-      "value": "EDITORIALS"
+      "url": "#"
     },
     {
+      "title": "BRAND COPY",
       "img": "./assets/img/portfolio-2.jpg",
-      "url": "#",
-      "value": "BRAND COPY"
+      "url": "#"
     },
-    { "img": "./assets/img/portfolio-3.jpg", "url": "#", "value": "EVENTS" }
+    { 
+      "title": "EVENTS", 
+      "img": "./assets/img/portfolio-3.jpg",
+      "url": "#"
+    }
   ]
 }

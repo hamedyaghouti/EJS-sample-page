@@ -19,19 +19,18 @@
         <div class="wrapper d-flex justify-content-between align-items-center">
           <div class="hamburger-menu d-md-none"><i class="<%= data.header.hamburgerMenu.icon%>"></i></div>
           <div class="left d-none d-md-block">
-            <% data.header.left.forEach(item => { %>
-              <a class="text-light" href="<%=item.url%>"><%=item.value%></a>
-            <% }) %>
+            <a class="text-light" href="<%=data.header.portfolio.url%>"><%=data.header.portfolio.value%></a>
+            <a class="text-light" href="<%=data.header.contact.url%>"><%=data.header.contact.value%></a>
           </div>
-          <a class="text-light" href="<%=data.header.center.url%>"><h1><%=data.header.center.value%></h1></a>
+          <a class="text-light" href="<%=data.header.title.url%>"><h1><%=data.header.title.value%></h1></a>
           <div class="right d-flex text-light">
             <div class="social d-none d-md-block">
-              <% data.header.right.social.forEach(item => { %>
-                <a class="text-light ml-2" href="<%=item.url%>" target="_blank"><i class="<%=item.icon%>"></i></a>
+              <% data.header.social.forEach(item => { %>
+                <a class="text-light ml-2" href="<%=item.url%>" target="_blank"><i class="<%=item.type%>"></i></a>
               <% }) %>
             </div>
             <div class="basket ml-2">
-              <a class="text-light" href="<%=data.header.right.basket.url%>"><i class="<%=data.header.right.basket.icon%>"></i></a>
+              <a class="text-light" href="<%=data.header.basket.url%>"><i class="<%=data.header.basket.type%>"></i></a>
             </div>
           </div>
         </div>
@@ -43,21 +42,21 @@
         <div class="container">
           <div class="d-flex justify-content-center">
             <h3 class="text-center w-75">
-              <%-data.three%>
+              <%-data.about%>
             </h3>
           </div>
         </div>
       </section>
-      <section class="reason text-light">
+      <section class="skills text-light">
         <div class="container">
           <div class="wrapper">
             <div class="w-75 mx-auto">
               <div class="row">
-                <% data.reason.forEach(item => { %>
+                <% data.skills.forEach(item => { %>
                   <div class="col-12 col-md-4 text-center">
                     <div class="content">
-                      <h3 class="mb-3 mb-md-5"><%-item.header%></h3>
-                      <% item.paragraph.forEach(value => { %>
+                      <h3 class="mb-3 mb-md-5"><%-item.title%></h3>
+                      <% item.contents.forEach(value => { %>
                         <p><%=value%></p>
                       <% }) %>
                     </div>
@@ -68,13 +67,13 @@
           </div>
         </div>
       </section>
-      <section class="core">
+      <section class="services">
         <div class="container">
-          <h1 class="text-center pb-4"><%=data.core.header%></h1>
+          <h1 class="text-center pb-4"><%=data.services.title%></h1>
           <div
             class="content-wrapper d-flex flex-md-row flex-column justify-content-center align-items-stretch"
           >
-            <% data.core.items.forEach(item => { %>
+            <% data.services.items.forEach(item => { %>
               <div class="item">
                 <a href="<%=item.url%>"
                   ><img class="w-100 h-100" src="<%=item.img%>"
@@ -95,7 +94,7 @@
             </div>
             <div class="right w-100">
               <h2><%=data.solution.title%></h2>
-              <% data.solution.paragraph.forEach(value => { %>
+              <% data.solution.contents.forEach(value => { %>
                 <p><%=value%></p>
               <% }) %>
               <a class="text-light d-inline-block" href="<%=data.solution.link.url%>"><%=data.solution.link.value%></a>
@@ -103,14 +102,14 @@
           </div>
         </div>
       </section>
-      <section class="brand">
+      <section class="projects">
         <div class="container">
           <div class="wrapper">
-            <h3 class="text-center"><%=data.brand.title%></h3>
+            <h3 class="text-center"><%=data.projects.title%></h3>
             <div class="row">
-              <% data.brand.items.forEach(item => { %>
+              <% data.projects.brands.forEach(item => { %>
                 <div class="item col-12 col-md-3">
-                  <img src="<%=item.img%>" />
+                  <img src="<%=item%>" />
                 </div>
               <% }) %>
             </div>
@@ -118,15 +117,17 @@
         </div>
       </section>
       <section class="carousel text-light">
-        <div class="container">
-          <div class="wrapper">
-            <p><%=data.carousel.description%></p>
-            <p><em><%=data.carousel.writer%></em></p>
-            <div class="text-center">
-              <a href="<%=data.carousel.link.url%>" class="text-center d-inline-block bg-white"><%=data.carousel.link.value%></a>
+        <% data.comments.forEach(item => { %>
+          <div class="container">
+            <div class="wrapper">
+              <p><%=item.description%></p>
+              <p><em><%=item.writer%></em></p>
+              <div class="text-center">
+                <a href="<%=item.link.url%>" class="text-center d-inline-block bg-white"><%=item.link.value%></a>
+              </div>
             </div>
           </div>
-        </div>
+        <% }) %>
       </section>
       <footer>
         <div class="container">
@@ -143,7 +144,7 @@
                   <div class="section-background-overlay"></div>
                 </div>
                 <h1>
-                  <a href="<%=item.url%>"><%=item.value%></a>
+                  <a href="<%=item.url%>"><%=item.title%></a>
                 </h1>
               </div>
             </div>
